@@ -1,0 +1,6 @@
+{
+  "msbuild-sdks": {
+    "Uno.Sdk": "5.3.0-dev.111",
+    "Microsoft.Build.NoTargets": "3.7.56"
+  }
+}

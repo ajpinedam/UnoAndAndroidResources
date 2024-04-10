@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"GeoTest.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"GeoTest.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}
