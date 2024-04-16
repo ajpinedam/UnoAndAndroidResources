@@ -19,6 +19,11 @@
     <UseInterpreter Condition="'$(Configuration)' == 'Debug' and $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'maccatalyst'">True</UseInterpreter>
     <IsUnoHead>true</IsUnoHead>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Android\Resources\layout\image_recorder_view.xml" />
+    <None Remove="Android\Resources\values\Colors.xml" />
+    <None Remove="Android\Resources\values\Dimensions.xml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Uno.WinUI" />
@@ -69,8 +74,10 @@
   <Import Project="..\GeoTest.Shared\base.props" />
 
   <Target Name="ValidateOverrides" BeforeTargets="Restore;_CheckForUnsupportedTargetFramework" Condition="'$(OverrideTargetFramework)' != ''">
-    <Error
-        Text="OverrideTargetFramework set to '$(OverrideTargetFramework)' is missing valid target. Set OverrideTargetFramework to one of the TargetFrameworks for this project or skip building this project (eg unload the project in Visual Studio)"
-        Condition="$(OverrideTargetFramework.Contains('windows10')) or !$(OverrideTargetFrameork.Contains('-'))" />
+    <Error Text="OverrideTargetFramework set to '$(OverrideTargetFramework)' is missing valid target. Set OverrideTargetFramework to one of the TargetFrameworks for this project or skip building this project (eg unload the project in Visual Studio)" Condition="$(OverrideTargetFramework.Contains('windows10')) or !$(OverrideTargetFrameork.Contains('-'))" />
   </Target>
+
+  <ItemGroup>
+    <None Remove="Android\ImageRecorderView.cs" />
+  </ItemGroup>
 </Project>
